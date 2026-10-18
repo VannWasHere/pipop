@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jeje",
-  description: "Hai, aku Jeje. Socials and support links.",
+  title: "JEJENG",
+  description: "Socials and support links.",
 };
 
 export const viewport: Viewport = {
