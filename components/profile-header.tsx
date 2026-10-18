@@ -5,12 +5,14 @@ import {
 } from "@/components/ui/avatar";
 import { CardTitle } from "@/components/ui/card";
 
-// Add public/avatar.jpg later. The J fallback shows until that file exists.
 export function ProfileHeader() {
   return (
     <div className="flex flex-col items-center gap-3">
       <Avatar className="size-24! text-2xl">
-        <AvatarImage src="/avatar.jpg" alt="JEJENG" />
+        <AvatarImage
+          src="/ee1a3c3a-1dc3-41cb-831a-29f404c7ad25.jfif"
+          alt="JEJENG"
+        />
         <AvatarFallback className="bg-secondary text-2xl font-semibold text-primary">
           J
         </AvatarFallback>
