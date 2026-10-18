@@ -1,0 +1,40 @@
+# Deploys this site to Vercel production on every push to main.
+# Add these repository secrets before the first deploy:
+#   VERCEL_TOKEN      — Vercel account token (Account Settings → Tokens)
+#   VERCEL_ORG_ID     — Team ID (Vercel team settings)
+#   VERCEL_PROJECT_ID — Project ID (Vercel project settings)
+# If the Vercel project was created by importing this GitHub repo,
+# turn off Vercel’s own Git auto-deploy so each push ships once, through this workflow.
+
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Pull Vercel environment
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
