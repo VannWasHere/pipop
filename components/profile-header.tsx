@@ -4,6 +4,12 @@ import {
   AvatarImage,
 } from "@/components/ui/avatar";
 import { CardTitle } from "@/components/ui/card";
+import { Great_Vibes } from "next/font/google";
+
+const signature = Great_Vibes({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export function ProfileHeader() {
   return (
@@ -19,8 +25,10 @@ export function ProfileHeader() {
       </Avatar>
       <div className="space-y-1">
         <CardTitle>
-          <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-            JEJENG
+          <h1
+            className={`${signature.className} text-5xl leading-none text-primary sm:text-6xl`}
+          >
+            Jejeng
           </h1>
         </CardTitle>
       </div>
