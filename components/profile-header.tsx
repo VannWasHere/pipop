@@ -4,11 +4,11 @@ import {
   AvatarImage,
 } from "@/components/ui/avatar";
 import { CardTitle } from "@/components/ui/card";
-import { Great_Vibes } from "next/font/google";
+import { Rubik } from "next/font/google";
 
-const signature = Great_Vibes({
-  weight: "400",
+const rubik = Rubik({
   subsets: ["latin"],
+  weight: "500",
 });
 
 export function ProfileHeader() {
@@ -26,9 +26,9 @@ export function ProfileHeader() {
       <div className="space-y-1">
         <CardTitle>
           <h1
-            className={`${signature.className} text-5xl leading-none text-primary sm:text-6xl`}
+            className={`${rubik.className} px-5 py-2 text-2xl font-medium tracking-wider text-primary sm:px-6 sm:py-3 sm:text-3xl`}
           >
-            Jejeng
+            JEJENG
           </h1>
         </CardTitle>
       </div>
